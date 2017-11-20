@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+
 import { NavigationActions } from 'react-navigation';
 import PropTypes from 'prop-types';
+import api from 'services/api';
+import { Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  AsyncStorage,
+  ActivityIndicator,
+} from 'react-native';
 
 import styles from './styles';
 
@@ -16,17 +24,40 @@ export default class Welcome extends Component {
     header: null,
   };
 
+  state = {
+    username: '',
+    loading: false,
+    error: false,
+  };
+
+  checkAndSaveUser = async () => {
+    const response = await api.get(`/users/${this.state.username}`);
+
+    if (!response.ok) throw Error();
+
+    await AsyncStorage.setItem('@GithubApp:username', this.state.username);
+  };
+
   navigateToUser = () => {
-    const { dispatch } = this.props.navigation;
+    if (this.state.username.length === 0) return;
 
-    const resetAction = NavigationActions.reset({
-      index: 0,
-      actions: [
-        NavigationActions.navigate({ routeName: 'User' }),
-      ],
-    });
+    this.setState({ loading: true, error: false });
 
-    dispatch(resetAction);
+    this.checkAndSaveUser()
+      .then(() => {
+        const { dispatch } = this.props.navigation;
+
+        const resetAction = NavigationActions.reset({
+          index: 0,
+          actions: [
+            NavigationActions.navigate({ routeName: 'User' }),
+          ],
+        });
+        dispatch(resetAction);
+      })
+      .catch(() => {
+        this.setState({ error: true, loading: false });
+      });
   };
 
   render() {
@@ -37,13 +68,21 @@ export default class Welcome extends Component {
           Para prosseguir, informe seu usuário no GitHub
         </Text>
 
+        { this.state.error && <Text style={styles.error}>Esse usuário não existe</Text>}
+
         <TextInput
+          autoCapitalize="none"
+          autoCorrect={false}
           style={styles.input}
+          onChangeText={(username) => { this.setState({ username }); }}
           placeholder="Digite seu usuário"
         />
 
         <TouchableOpacity style={styles.button} onPress={this.navigateToUser} >
-          <Text style={styles.buttonText}>Prosseguir</Text>
+          { this.state.loading
+            ? <ActivityIndicator size="small" color="#fff" />
+            : <Text style={styles.buttonText}>Prosseguir</Text>
+          }
         </TouchableOpacity>
       </View>
     );
