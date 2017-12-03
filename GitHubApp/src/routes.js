@@ -2,6 +2,7 @@ import React from 'react';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 
 import Header from 'components/header';
+import { colors } from 'styles';
 
 import Welcome from 'pages/welcome';
 import Repositories from 'pages/repositories';
@@ -14,6 +15,19 @@ const createRootNavigator = (userExists = false) =>
       screen: TabNavigator({
         Repositories: { screen: Repositories },
         Organizatons: { screen: Organizations },
+      }, {
+        swipeEnabled: true,
+        animationEnabled: true,
+        tabBarPosition: 'bottom',
+        tabBarOptions: {
+          showLabel: false,
+          showIcon: true,
+          activeTintColor: colors.white,
+          inactiveTintColor: colors.inactive,
+          style: {
+            backgroundColor: colors.primary,
+          },
+        },
       }),
     },
   }, {

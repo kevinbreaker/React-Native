@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { AsyncStorage } from 'react-native';
 import createRootNavigator from 'routes';
 
-console.tron.log('oh');
+console.tron.log('Debug test');
 
 export default class App extends Component {
   state = {
