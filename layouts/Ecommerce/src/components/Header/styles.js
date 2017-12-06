@@ -1,21 +1,30 @@
 import { StyleSheet } from 'react-native';
-import { colors, fonts, metrics } from '../../styles';
+import { colors, fonts, metrics } from '../../styles/index';
+
+import '../../config/reactotronConfig';
+
+console.tron.log(colors);
+console.tron.log('colors');
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
-    height: metrics,
-    paddingTop: metrics,
-    paddingHorizontal: metrics,
+    height: metrics.headerHeight,
+    paddingTop: metrics.headerPadding,
+    paddingHorizontal: metrics.padding,
     borderBottomWidth: 1,
-    borderColor: colors,
+    borderColor: colors.lighter,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 
-  icons: {
+  icon: {
+    color: colors.primary,
 
   },
   title: {
-
+    fontSize: fonts.big,
   },
 });
 

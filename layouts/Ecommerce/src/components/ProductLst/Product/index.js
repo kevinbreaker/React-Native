@@ -1,14 +1,20 @@
 import React from 'react';
-import  { View, Text, Image } from 'react-native';
+import { View, Text, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import styles from './styles';
 
 const Product = ({ product: { image, title, description, price } }) => (
   <View style={styles.container}>
-    <Image style={styles.image} sourc={{ uri: image }} />
-    <Text style={styles.title}>{title}</Text>
-    <Text style={styles.description}>{description}</Text>
-    <Text style={styles.price}>{price}</Text>
+    <Icon name="ios-checkmark-circle-outline" size={30} style={styles.checkIcon} />
+    <View style={styles.imageContainer}>
+      <Image style={styles.image} source={{ uri: image }} />
+    </View>
+    <View style={styles.infoContainer}>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.description}>{description}</Text>
+      <Text style={styles.price}>{price}</Text>
+    </View>
   </View>
 );
 

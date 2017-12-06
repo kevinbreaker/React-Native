@@ -14,8 +14,8 @@ const SubHeader = () => (
       <Text style={styles.name}>Kevin Martin</Text>
       <Text style={styles.bio}>React Developer, in love with JavaScript and programming</Text>
       <View style={styles.buttonContainer}>
-        <Button>Mensagem</Button>
-        <Button>Seguir</Button>
+        <Button style={styles.firstButton}>Mensagem</Button>
+        <Button type="outline">Seguir</Button>
       </View>
     </View>
   </View>
