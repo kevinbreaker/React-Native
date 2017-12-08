@@ -4,63 +4,51 @@ import { fonts, colors } from '../../../styles/index';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
-    paddingVertical: 25,
+    paddingVertical: 10,
     borderColor: colors.lighter,
     borderBottomWidth: 1,
     flexDirection: 'row',
+    width: '100%',
   },
 
-  subcontainer: {
+  subContainer: {
     flexDirection: 'column',
     flexWrap: 'wrap',
   },
 
-  avatar: {
-    borderRadius: 30,
-    width: 40,
-    height: 40,
-    backgroundColor: colors.primary,
+  iconContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 20,
   },
-  nameAvatar: {
-    color: colors.white,
-  },
 
-  name: {
+  title: {
     fontWeight: '500',
   },
 
-  message: {
-    fontWeight: '300',
-    width: 240,
+  notification: {
+    color: colors.light,
   },
 
-  tag: {
+  new: {
     paddingHorizontal: 5,
     fontSize: fonts.smaller,
     color: colors.white,
-  },
-  'tag-Work': {
-    backgroundColor: colors.purple,
-  },
-  'tag-Friend': {
-    backgroundColor: colors.yellow,
-  },
-  'tag-Fun': {
-    backgroundColor: colors.green,
+    alignContent: 'center',
   },
 
-  star: {
-    color: colors.yellow,
-  },
-
-  subcontainerTagStars: {
+  newsContainer: {
     marginTop: 20,
+    backgroundColor: colors.purple,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
   },
+  er: {
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    backgroundColor: colors.green,
+    // paddingRight: 'stretch'
+  }
 });
 
 export default styles;

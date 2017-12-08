@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   },
 
   icon: {
-    color: colors.white,
+    color: colors.red,
   },
 });
 
