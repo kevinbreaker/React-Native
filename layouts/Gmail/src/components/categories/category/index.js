@@ -16,7 +16,7 @@ const Category = ({
     <View style={styles.iconContainer} >
       <Icon color={color} name={`md-${icon}`} size={30} />
     </View>
-<View style={styles.er}>
+<View style={styles.newsletterContainer}>
     <View style={styles.subContainer}>
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.notification}>{notification}</Text>

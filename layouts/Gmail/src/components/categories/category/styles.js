@@ -43,11 +43,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
-  er: {
+  newsletterContainer: {
     flexDirection: 'row',
     alignItems: 'stretch',
-    backgroundColor: colors.green,
-    // paddingRight: 'stretch'
   }
 });
 
