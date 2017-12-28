@@ -1,10 +1,9 @@
-import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
-import Header from './components/Header';
 import Welcome from './pages/Welcome';
 import Inbox from './pages/Inbox';
-import OpenedEmail from 'pages/OpenedEmail';
+import ReadEmail from 'pages/ReadEmail';
+import SendEmail from 'pages/SendEmail';
 
 const createRootNavigator = (userExists = false) =>
   StackNavigator({
@@ -17,10 +16,9 @@ const createRootNavigator = (userExists = false) =>
   }, {
     initialRouteName: userExists ? 'Kmail' : 'Welcome',
     navigationOptions: {
-      header: props => <Header {...props} />,
+      header: null, // props => <Header {...props} />,
     },
   });
-
 
 export default createRootNavigator;
 
