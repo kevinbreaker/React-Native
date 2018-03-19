@@ -12,7 +12,7 @@ import {
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as FavoriteActions from '../../store/actions/favorites';
+import { Creators as FavoriteActions } from '../../store/ducks/favorites';
 
 import styles from './styles';
 
@@ -74,8 +74,9 @@ class Main extends Component {
               onPress={this.addRepository}
               activeOpavity={0.6}
             >
-            { this.props.favorites.loading
-              ? <ActivityIndicator  size="small" color={styles.loading.color} />
+            {
+              this.props.favorites.loading
+              ? <ActivityIndicator size="small" color={styles.loading.color} />
               : <Text style={styles.buttonText}>Adicionar aos favoritos</Text>
             }
             </TouchableOpacity>
