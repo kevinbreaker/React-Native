@@ -1,13 +1,14 @@
 import { StyleSheet } from 'react-native';
+import { colors } from 'styles';
 
 const styles = StyleSheet.create({
   inputContainer: {
     height: 45,
     paddingHorizontal: 10,
     paddingVertical: 6,
-    backgroundColor: '#202020',
+    backgroundColor: colors.secondary,
     borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: '#ccc',
+    borderTopColor: colors.lighten,
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -15,17 +16,16 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: 30,
-    color: '#fff',
+    color: colors.white,
     paddingHorizontal: 10,
     paddingVertical: 0,
-    // backgroundColor: '#0d0d0d',
-    borderColor: '#ddd',
+    borderColor: colors.light,
     // borderRadius: 12,
   },
 
   button: {
     marginLeft: 10,
-    color: '#a0ffda',
+    color: colors.primary,
     fontWeight: 'bold',
   },
 });

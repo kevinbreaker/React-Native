@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { colors, fonts } from 'styles';
 
 const styles = StyleSheet.create({
   backgroud: {
@@ -8,7 +9,6 @@ const styles = StyleSheet.create({
   },
   containerTitle: {
     alignItems: 'center',
-    // flexDirection: 'row'
     position: 'relative',
     top: -60,
     marginBottom: 20,
@@ -18,9 +18,9 @@ const styles = StyleSheet.create({
     width: 100,
   },
   title: {
-    fontSize: 30,
-    color: '#aeffda',
-    textShadowColor: 'black',
+    fontSize: fonts.bigger,
+    color: colors.primary,
+    textShadowColor: colors.black,
     textShadowOffset: { width: -2, height: 1 },
     textShadowRadius: 10,
     fontWeight: 'bold',
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   input: {
     alignSelf: 'stretch',
     marginHorizontal: 30,
-    color: 'white',
+    color: colors.white,
   },
   button: {
     alignSelf: 'stretch',
@@ -44,23 +44,21 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   buttonLogin: {
-    backgroundColor: '#aeffda',
+    backgroundColor: colors.primary,
   },
   buttonSignUp: {
     borderWidth: 1,
     // borderRadius: 20,
-    borderColor: '#aab4ef',
+    borderColor: colors.primary,
   },
   buttonText: {
-    color: 'black',
-    fontSize: 14,
-    // textShadow: 2,
+    color: colors.black,
+    fontSize: fonts.small,
     fontWeight: 'bold',
   },
   buttonTextSignUp: {
-    color: '#aeffda',
-    fontSize: 14,
-    // textShadow: 2,
+    color: colors.primary,
+    fontSize: fonts.small,
     fontWeight: 'bold',
   },
 });

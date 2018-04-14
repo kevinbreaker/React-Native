@@ -4,6 +4,7 @@ import {
   View,
   Image,
   Text,
+  Keyboard,
   TouchableOpacity,
   ActivityIndicator,
   ImageBackground,
@@ -18,6 +19,9 @@ export default class Welcome extends Component {
     loading: false,
     error: false,
   };
+  componentWillMount() {
+    Keyboard.dismiss();
+  }
   navigateToChat = () => {
     this.setState({ loading: true });
     NavigatioActions.navigate({ routerName: 'Chat' });
